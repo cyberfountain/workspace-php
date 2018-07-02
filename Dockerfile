@@ -13,7 +13,7 @@ RUN apk update && apk add \
         libpng-dev \
         libxml2-dev \
         gettext-dev \
-        autoconf
+        autoconf \
     && docker-php-ext-install -j$(nproc) mysqli pdo pdo_mysql zip gd mbstring xml curl json gettext tokenizer
 
 COPY conf/php.ini-$PHP_FPM_CONF /usr/local/etc/php/php.ini
