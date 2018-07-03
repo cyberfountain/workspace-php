@@ -15,8 +15,8 @@ RUN apk update && apk add \
         libpng-dev \
         libxml2-dev \
         gettext-dev \
-        autoconf
-    && pecl install xdebug-2.6.0
+        autoconf \
+    && pecl install xdebug-2.6.0 \
     && docker-php-ext-install -j$(nproc) mysqli pdo pdo_mysql zip gd mbstring xml curl json gettext tokenizer \
     && docker-php-ext-enable xdebug
 
