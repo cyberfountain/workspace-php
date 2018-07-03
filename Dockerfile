@@ -1,4 +1,4 @@
-FROM php:7.2.6-fpm-alpine3.7
+FROM php:7.2.7-fpm-alpine3.7
 
 ENV XDEBUG_STATUS true
 ENV PHP_FPM_CONF "development"
