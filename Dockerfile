@@ -17,8 +17,7 @@ RUN apk update && apk add \
         gettext-dev \
         autoconf \
     && pecl install xdebug-2.6.0 \
-    && docker-php-ext-install -j$(nproc) mysqli pdo pdo_mysql zip gd mbstring xml curl json gettext tokenizer \
-    && docker-php-ext-enable xdebug
+    && docker-php-ext-install -j$(nproc) mysqli pdo pdo_mysql zip gd mbstring xml curl json gettext tokenizer
     
 COPY conf/php.ini-$PHP_FPM_CONF /usr/local/etc/php/php.ini
 
