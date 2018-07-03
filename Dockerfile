@@ -19,6 +19,8 @@ RUN apk update && apk add \
     && pecl install xdebug-2.6.0 \
     && docker-php-ext-install -j$(nproc) mysqli pdo pdo_mysql zip gd mbstring xml curl json gettext tokenizer \
     && docker-php-ext-enable xdebug
+    
+COPY conf/php.ini-$PHP_FPM_CONF /usr/local/etc/php/php.ini
 
 COPY entrypoint/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
